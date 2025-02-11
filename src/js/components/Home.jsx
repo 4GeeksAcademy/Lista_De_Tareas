@@ -6,21 +6,31 @@ import rigoImage from "../../img/rigo-baby.jpg";
 //create your first component
 const Home = () => {
 	return (
-		<div className="text-center">
-            
+		<div className="list">
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+			<h1>Mis tareas</h1>
+			<ul>
+				<li><input tipe="text" placeholder="añade una tarea"></input></li>
+
+				<li>
+					Pasear al perro <i class="fa-solid fa-x"></i>
+				</li>
+
+				<li>
+					Comprar pan <i class="fa-solid fa-x"></i>
+				</li>
+
+				<li>
+					Pintar la casa <i class="fa-solid fa-x"></i>
+				</li>
+
+				<li>
+					Dominar el mundo <i class="fa-solid fa-x"></i>
+				</li>
+
+			</ul> 
+			<div>maximo 15 tareas</div>
+      
 		</div>
 	);
 };

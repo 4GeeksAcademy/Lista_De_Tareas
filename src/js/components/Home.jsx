@@ -5,42 +5,40 @@ import React, {useState} from "react";
 //create your first component
 const Home = () => {
 
-	const [inputValue, setImputValue,]= useState("")
+	const [inputValue, setInputValue,]= useState("");
 
-	const [tareas, setTareas] = useState([])
+	const [tareas, setTareas] = useState([]);
 	
 
-
 	return (
+
 		<div className= "list" style={{width: "500px"}}>
 
-			<h1>Mis tareas {inputValue} </h1>
+			<h1>Mis tareas </h1>
 
 			<ul>
-
-
-				<li><input tipe="text" 
-				onChange={(e) => setImputValue(e.target.value)}
+				<li> <input type="text"
+				onChange={(e) => setInputValue(e.target.value)}
 				value={inputValue}
-				onKeyDown={(e)=> e.key === "enter" && setTareas()}
-				placeholder="añade una tarea"/>
+				onKeyDown={(e) => {
+					if (e.key === "Enter") {
+						
+						setTareas(tareas.concat (inputValue));
+						setInputValue("");
+					  	} 
+					}}
+					placeholder="añade una tarea"></input>
+
 				</li>
 
-				<li>
-					Pasear al perro  <img src="https://raw.githubusercontent.com/4GeeksAcademy/Lista_De_Tareas/refs/heads/main/marca-x.png" style={{width: "15px", height: "15"}}/>
-				</li>
+				{tareas.map((t, index) => (
+					<li key={index}>
+           			 {t}{" "}
+					
+					<img src="https://raw.githubusercontent.com/4GeeksAcademy/Lista_De_Tareas/refs/heads/main/marca-x.png" style={{width: "15px", height: "15"}}/>
 
-				<li>
-					Comprar pan <img src="https://raw.githubusercontent.com/4GeeksAcademy/Lista_De_Tareas/refs/heads/main/marca-x.png" style={{width: "15px", height: "15"}}/>
 					</li>
-
-				<li>
-					Pintar la casa <img src="https://raw.githubusercontent.com/4GeeksAcademy/Lista_De_Tareas/refs/heads/main/marca-x.png" style={{width: "15px", height: "15"}}/>
-					</li>
-
-				<li>
-					Dominar el mundo <img src="https://raw.githubusercontent.com/4GeeksAcademy/Lista_De_Tareas/refs/heads/main/marca-x.png" style={{width: "15px", height: "15"}}/>
-					</li>
+				))}
 
 			</ul> 
 			<div>maximo 15 tareas</div>

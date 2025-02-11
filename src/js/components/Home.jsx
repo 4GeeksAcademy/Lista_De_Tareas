@@ -7,18 +7,23 @@ const Home = () => {
 
 	const [inputValue, setImputValue,]= useState("")
 
+	const [tareas, setTareas] = useState([])
+	
+
+
 	return (
 		<div className= "list" style={{width: "500px"}}>
 
 			<h1>Mis tareas {inputValue} </h1>
 
 			<ul>
-//esto es una prueba de subida
+
 
 				<li><input tipe="text" 
 				onChange={(e) => setImputValue(e.target.value)}
 				value={inputValue}
-				placeholder="añade una tarea"></input>
+				onKeyDown={(e)=> e.key === "enter" && setTareas()}
+				placeholder="añade una tarea"/>
 				</li>
 
 				<li>

@@ -1,32 +1,40 @@
-import React from "react";
+import React, {useState} from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+
 
 //create your first component
 const Home = () => {
+
+	const [inputValue, setImputValue,]= useState("")
+
 	return (
-		<div className="list">
+		<div className= "list" style={{width: "500px"}}>
 
-			<h1>Mis tareas</h1>
+			<h1>Mis tareas {inputValue} </h1>
+
 			<ul>
-				<li><input tipe="text" placeholder="añade una tarea"></input></li>
 
-				<li>
-					Pasear al perro <i class="fa-solid fa-x"></i>
+				<li><input tipe="text" 
+				onChange={(e) => setImputValue(e.target.value)}
+				value={inputValue}
+				placeholder="añade una tarea"></input>
 				</li>
 
 				<li>
-					Comprar pan <i class="fa-solid fa-x"></i>
+					Pasear al perro  <img src="https://raw.githubusercontent.com/4GeeksAcademy/Lista_De_Tareas/refs/heads/main/marca-x.png" style={{width: "15px", height: "15"}}/>
 				</li>
 
 				<li>
-					Pintar la casa <i class="fa-solid fa-x"></i>
-				</li>
+					Comprar pan <img src="https://raw.githubusercontent.com/4GeeksAcademy/Lista_De_Tareas/refs/heads/main/marca-x.png" style={{width: "15px", height: "15"}}/>
+					</li>
 
 				<li>
-					Dominar el mundo <i class="fa-solid fa-x"></i>
-				</li>
+					Pintar la casa <img src="https://raw.githubusercontent.com/4GeeksAcademy/Lista_De_Tareas/refs/heads/main/marca-x.png" style={{width: "15px", height: "15"}}/>
+					</li>
+
+				<li>
+					Dominar el mundo <img src="https://raw.githubusercontent.com/4GeeksAcademy/Lista_De_Tareas/refs/heads/main/marca-x.png" style={{width: "15px", height: "15"}}/>
+					</li>
 
 			</ul> 
 			<div>maximo 15 tareas</div>
@@ -35,4 +43,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default Home; 

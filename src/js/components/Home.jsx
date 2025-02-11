@@ -34,14 +34,14 @@ const Home = () => {
 				{tareas.map((t, index) => (
 					<li key={index}>
            			 {t}{" "}
-					
-					<img src="https://raw.githubusercontent.com/4GeeksAcademy/Lista_De_Tareas/refs/heads/main/marca-x.png" style={{width: "15px", height: "15"}}/>
+
+					<img src="https://raw.githubusercontent.com/4GeeksAcademy/Lista_De_Tareas/refs/heads/main/marca-x.png" style={{width: "15px", height: "15",  }} onClick={() => setTareas(tareas.filter((t, currentIndex) => index != currentIndex))}/>
 
 					</li>
 				))}
 
 			</ul> 
-			<div>maximo 15 tareas</div>
+			<div>{tareas.length } tareas </div>
       
 		</div>
 	);
